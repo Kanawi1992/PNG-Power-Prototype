@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utility Support Portal - Demo Prototype</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --sw-teal: #0F766E; --sw-dark: #0B1F24; --sw-amber: #F59E0B; }
+    body { background-color: #0B1F24; font-family: system-ui, -apple-system, sans-serif; color: #f1f5f9; }
+    .sw-header { background: linear-gradient(135deg, #0F766E 0%, #0B1F24 100%); border-bottom: 3px solid #F59E0B; }
+    .chat-bubble-bot { background-color: #12303a; border-top-left-radius: 0; border: 1px solid #1f4b58; }
+    .chat-bubble-user { background-color: #0F766E; border-top-right-radius: 0; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- DEMO BANNER -->
+  <div class="bg-amber-400 text-slate-900 text-center text-xs font-bold py-1.5 px-2">
+    DEMO PROTOTYPE by Stepwise Ventures. Not an official service of any utility. All contact details and codes are sample placeholders.
+  </div>
+
+  <header class="sw-header text-white p-4 shadow-xl">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <div>
+        <h1 class="text-xl font-black tracking-wider">STEPWISE <span class="text-amber-400 text-sm font-bold">Ventures</span></h1>
+        <p class="text-xs text-slate-300">White-label customer support portal for utilities (concept demo)</p>
+      </div>
+      <span class="bg-slate-900/60 border border-amber-400/60 text-amber-300 text-[10px] font-bold px-2 py-1 rounded">SAMPLE UTILITY</span>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-4 w-full grid grid-cols-1 md:grid-cols-3 gap-6 my-4">
+
+    <section class="space-y-4">
+      <!-- Fraud reporting -->
+      <div class="bg-slate-900 border border-red-900/60 rounded-xl p-4 shadow-md relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-bl">CONFIDENTIAL</div>
+        <h2 class="text-md font-bold text-red-400 mb-1">🚨 Report Power Theft &amp; Fraud</h2>
+        <p class="text-xs text-slate-300 mb-3">Example flow: let customers report illegal activity confidentially.</p>
+        <div class="bg-slate-950/80 rounded-lg p-3 border border-slate-800 text-xs mb-3">
+          <p class="text-slate-200 font-semibold mb-1">Example categories:</p>
+          <ul class="list-disc list-inside text-slate-400 space-y-1">
+            <li>Meter tampering or broken seals.</li>
+            <li>Illegal connections.</li>
+            <li>Meter bypassing.</li>
+            <li>Unregistered lines.</li>
+          </ul>
+        </div>
+        <div class="space-y-2 text-xs">
+          <div class="w-full text-center bg-red-900/60 text-red-200 font-bold py-2 rounded-lg border border-red-700/50">Hotline: [SAMPLE HOTLINE NUMBER]</div>
+          <div class="w-full text-center bg-slate-800 text-slate-300 py-1.5 rounded-lg border border-slate-700">Email: [sample@utility.example]</div>
+        </div>
+      </div>
+
+      <!-- Prepaid options -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-md">
+        <h2 class="text-md font-bold text-amber-400">📲 Prepaid Top-up Options</h2>
+        <p class="text-xs text-slate-400 mt-1 mb-3">Sample layout. Each utility supplies its own verified channels.</p>
+        <div class="space-y-2 text-xs">
+          <div class="bg-slate-800 p-3 rounded-lg border border-slate-700">
+            <div class="font-bold text-teal-300 font-mono mb-1">[USSD CODE A] - Mobile operator</div>
+            <p class="text-slate-300">Dial code &rarr; Enter meter number &rarr; Enter amount &rarr; Confirm.</p>
+            <div class="mt-2 bg-amber-950/60 p-2 rounded border border-amber-600/40 text-[11px] text-amber-300"><strong>SMS missing?</strong> Dial [RETRIEVAL CODE] to view your last token.</div>
+          </div>
+          <div class="bg-slate-800 p-3 rounded-lg border border-slate-700">
+            <div class="font-bold text-emerald-300 font-mono mb-1">[USSD CODE B] - Bank mobile banking</div>
+            <p class="text-slate-300">Dial code &rarr; Enter PIN &rarr; Top-up services &rarr; Utility.</p>
+          </div>
+          <div class="bg-slate-800 p-3 rounded-lg border border-slate-700">
+            <div class="font-bold text-rose-300 font-mono mb-1">[USSD CODE C] - Mobile wallet</div>
+            <p class="text-slate-300">Dial code &rarr; Top-up services &rarr; Utility.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicator lights -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-md">
+        <h3 class="text-sm font-bold text-slate-200 mb-2">Meter Indicator Light Guide (sample)</h3>
+        <div class="space-y-2 text-xs">
+          <div class="flex items-center space-x-2"><span class="w-3 h-3 rounded-full bg-emerald-500"></span><span class="text-slate-300"><strong>Green:</strong> Sufficient credit.</span></div>
+          <div class="flex items-center space-x-2"><span class="w-3 h-3 rounded-full bg-amber-400"></span><span class="text-slate-300"><strong>Amber:</strong> Credit running low.</span></div>
+          <div class="flex items-center space-x-2"><span class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span><span class="text-slate-300"><strong>Red:</strong> Top up immediately.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chatbot -->
+    <section class="md:col-span-2 bg-slate-900 border border-slate-800 rounded-xl flex flex-col h-[680px] shadow-xl overflow-hidden">
+      <div class="bg-slate-800/80 p-3 border-b border-slate-700 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 rounded-full bg-teal-900 flex items-center justify-center text-amber-400 text-sm font-bold border border-amber-400">⚡</div>
+          <div>
+            <h3 class="text-sm font-bold text-white">Virtual Assistant (Demo)</h3>
+            <p class="text-[10px] text-emerald-400">● Prototype: scripted answers only</p>
+          </div>
+        </div>
+        <button onclick="resetChat()" class="text-xs text-slate-400 hover:text-white bg-slate-700 px-2 py-1 rounded">Reset</button>
+      </div>
+
+      <div class="p-2 bg-slate-950/60 border-b border-slate-800 flex flex-wrap gap-1 text-[11px]">
+        <button onclick="sendQuickPrompt('How to report meter tampering or fraud?')" class="bg-red-950/60 hover:bg-red-900/50 text-red-300 px-2 py-1 rounded-full border border-red-700/50">🚨 Report Fraud</button>
+        <button onclick="sendQuickPrompt('How do I buy prepaid power by USSD?')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded-full border border-slate-700">📱 Buy via USSD</button>
+        <button onclick="sendQuickPrompt('Did not receive token SMS')" class="bg-slate-800 hover:bg-slate-700 text-amber-300 px-2 py-1 rounded-full border border-slate-700">📩 Missing Token</button>
+        <button onclick="sendQuickPrompt('Report fallen powerline or hazard')" class="bg-slate-800 hover:bg-slate-700 text-sky-300 px-2 py-1 rounded-full border border-slate-700">⚠️ Report Hazard</button>
+        <button onclick="sendQuickPrompt('How to find pole number?')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-1 rounded-full border border-slate-700">🏷️ Find Pole Tag</button>
+      </div>
+
+      <div id="chatMessages" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs"></div>
+
+      <form onsubmit="handleUserMessage(event)" class="p-3 bg-slate-800 border-t border-slate-700 flex space-x-2">
+        <input id="chatInput" type="text" placeholder="Try: fraud, USSD, missing token, hazard, pole..." class="flex-1 bg-slate-900 border border-slate-700 text-white rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-teal-500" required />
+        <button type="submit" class="bg-teal-700 hover:bg-teal-600 text-white font-bold px-4 py-2 rounded-lg text-xs">Send ➔</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-500 py-3 text-center text-[11px]">
+    <p>Concept demo by Stepwise Ventures, Port Moresby. Not affiliated with or endorsed by any utility. Sample data only.</p>
+  </footer>
+
+  <script>
+    const WELCOME = `
+      <p><strong>Welcome! This is a demo support assistant.</strong></p>
+      <p>In a live deployment it would be configured with a utility's verified information. In this prototype it can show example answers for:</p>
+      <ul class="list-disc list-inside text-slate-300 space-y-0.5">
+        <li>Reporting theft, illegal connections and tampering.</li>
+        <li>Prepaid top-up steps via USSD.</li>
+        <li>Retrieving a missing token.</li>
+        <li>Reporting hazards and identifying poles.</li>
+      </ul>`;
+
+    const kb = [
+      { keywords: ['fraud','tamper','illegal','theft','bypass','bridging','hook'],
+        answer: "<strong>Reporting power theft &amp; fraud (sample flow):</strong><br>Illegal connections and meter tampering are safety hazards and offences.<br><br>&bull; Call the hotline: <strong class='text-red-400'>[SAMPLE HOTLINE NUMBER]</strong><br>&bull; Visit a customer service office.<br>&bull; Email location details to [sample@utility.example]<br><br><em>The live version would explain how reports are kept confidential.</em>" },
+      { keywords: ['missing','not receive','didn','sms','retriev','776'],
+        answer: "<strong>Missing token (sample flow):</strong><br>Dial <strong class='text-amber-400'>[RETRIEVAL CODE]</strong> and enter your meter number to see your last token on screen. If it still fails, contact support on [SAMPLE HOTLINE NUMBER]." },
+      { keywords: ['ussd','buy','top','prepaid','bmobile','bsp','cellmoni','digicel','telikom','easipay'],
+        answer: "<strong>Prepaid top-up (sample flow):</strong><br>1. Dial your provider's USSD code <strong>[USSD CODE]</strong>.<br>2. Enter your meter number.<br>3. Enter the amount.<br>4. Confirm and wait for your token by SMS.<br><br><em>Each utility would supply its own verified codes and limits.</em>" },
+      { keywords: ['fallen','line','wire','danger','spark','hazard','safety'],
+        answer: "<span class='text-red-400 font-bold'>⚠️ HAZARD GUIDANCE (sample):</span><br>1. Stay well clear of fallen lines or sparking equipment.<br>2. Keep children and bystanders away.<br>3. Call the utility's emergency number: <strong class='text-red-400'>[SAMPLE HOTLINE NUMBER]</strong>.<br>4. Note the nearest pole tag to help crews find the location." },
+      { keywords: ['pole','tag','stencil','location'],
+        answer: "<strong>Finding a pole number (sample):</strong><br>Look for a plate or painted code on the pole near the fault, for example <strong>XXX-A00-00</strong>. Quote it when you call so crews can locate the problem quickly." },
+      { keywords: ['error','keypad','code','meter'],
+        answer: "<strong>Meter diagnostics (sample):</strong><br>Keypad shortcuts and error codes differ by meter model. A live deployment would load the utility's verified list here." }
+    ];
+
+    function generateReply(q) {
+      q = q.toLowerCase();
+      for (const item of kb) if (item.keywords.some(k => q.includes(k))) return item.answer;
+      return "This demo covers fraud reporting, prepaid top-ups, missing tokens, hazards and pole tags. Try one of the topic buttons above.";
+    }
+
+    function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+    function appendMessage(msg, sender) {
+      const c = document.getElementById('chatMessages');
+      const div = document.createElement('div');
+      div.className = 'flex items-start space-x-2 ' + (sender === 'user' ? 'justify-end' : '');
+      div.innerHTML = sender === 'user'
+        ? `<div class="chat-bubble-user p-3 rounded-lg max-w-[80%] text-white">${esc(msg)}</div>`
+        : `<div class="w-6 h-6 rounded-full bg-teal-900 text-amber-400 flex items-center justify-center font-bold text-[10px] shrink-0">SW</div><div class="chat-bubble-bot p-3 rounded-lg max-w-[85%] text-slate-200 space-y-1">${msg}</div>`;
+      c.appendChild(div);
+      c.scrollTop = c.scrollHeight;
+    }
+
+    function handleUserMessage(e) {
+      e.preventDefault();
+      const el = document.getElementById('chatInput');
+      const t = el.value.trim();
+      if (!t) return;
+      appendMessage(t, 'user'); el.value = '';
+      setTimeout(() => appendMessage(generateReply(t), 'bot'), 500);
+    }
+
+    function sendQuickPrompt(t) {
+      appendMessage(t, 'user');
+      setTimeout(() => appendMessage(generateReply(t), 'bot'), 400);
+    }
+
+    function resetChat() {
+      document.getElementById('chatMessages').innerHTML = '';
+      appendMessage(WELCOME, 'bot');
+    }
+    resetChat();
+  </script>
+</body>
+</html>
